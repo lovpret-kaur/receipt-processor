@@ -29,14 +29,17 @@ Steps to Run the Application
 
 1. Clone the repository
    git clone https://github.com/lovpret-kaur/receipt-processor.git
+
    cd receipt-processor
-2. Build and start the application
+3. Build and start the application
    docker-compose up --build
-3. Once the container is up and running, verify the API is working by navigating to http://localhost:8000. You should see "API is running"
-4. API Endpoints
+4. Once the container is up and running, verify the API is working by navigating to http://localhost:8000. You should see "API is running"
+5. API Endpoints
    1. POST /receipts/process
    This endpoint processes a receipt and returns a unique receipt ID.
+   
    Request Body:
+
    {
   "retailer": "Target",
   "purchaseDate": "2022-01-01",
@@ -50,14 +53,20 @@ Steps to Run the Application
   ],
   "total": "35.35"
    }
+
    Response:
+
    {
   "id": "96a8c783-5c4b-4517-96f4-bc70d8bc9bd2"
    }
+
    2. GET /receipts/{receipt_id}/points
    This endpoint retrieves the points for a given receipt ID.
+   
    curl http://localhost:8000/receipts/<id>/points
+
    Response:
+
    {
   "points": 109
    }
