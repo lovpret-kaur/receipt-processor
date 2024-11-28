@@ -1,0 +1,10 @@
+services:
+  receipt_processor:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./app:/app  # Mounts the 'app' folder for development
+    ports:
+      - "8000:8000" 
+    command: python api.py  # Runs the main script
